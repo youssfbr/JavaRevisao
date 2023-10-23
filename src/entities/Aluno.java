@@ -123,6 +123,18 @@ public class Aluno {
         return (nota1 + nota2 + nota3 + nota4) / 4;
     }
 
+    public boolean getAlunoAprovado() {
+
+        double media = getMediaNota();
+
+        if (media >= 70) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "Aluno{" +
