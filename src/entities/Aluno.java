@@ -1,6 +1,8 @@
 package entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno {
     private String nome;
@@ -10,7 +12,7 @@ public class Aluno {
     private String nomeMae;
     private String nomePai;
 
-    private Disciplina disciplina = new Disciplina();
+    private List<Disciplina> disciplinas = new ArrayList<>();
 
 
     public Aluno() {
@@ -22,10 +24,10 @@ public class Aluno {
 
     public Aluno(String nome, double nota1, double nota2, double nota3, double nota4) {
         this.nome = nome;
-        this.disciplina.setNota1(nota1);
-        this.disciplina.setNota2(nota2);
-        this.disciplina.setNota3(nota3);
-        this.disciplina.setNota2(nota4);
+//        this.disciplina.setNota1(nota1);
+//        this.disciplina.setNota2(nota2);
+//        this.disciplina.setNota3(nota3);
+//        this.disciplina.setNota2(nota4);
     }
 
     public Aluno(String nome, LocalDate dataNascimento, String registroGeral, String cpf, String nomeMae, String nomePai) {
@@ -85,16 +87,23 @@ public class Aluno {
         this.nomePai = nomePai;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 
     public double getMediaNota() {
-        return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+
+        double somaNotas = 0.0;
+
+        for (Disciplina disciplina : disciplinas) {
+            somaNotas += disciplina.getNota();
+        }
+
+        return somaNotas / disciplinas.size();
     }
 
     public boolean getAlunoAprovado() {
@@ -113,7 +122,7 @@ public class Aluno {
                 ", cpf='" + cpf + '\'' +
                 ", nomeMae='" + nomeMae + '\'' +
                 ", nomePai='" + nomePai + '\'' +
-                ", disciplina=" + disciplina +
+                ", disciplinas=" + disciplinas +
                 '}';
     }
 }

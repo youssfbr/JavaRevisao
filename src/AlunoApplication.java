@@ -1,4 +1,5 @@
 import entities.Aluno;
+import entities.Disciplina;
 
 import java.time.LocalDate;
 
@@ -9,17 +10,25 @@ public class AlunoApplication {
         aluno.setNome("Alisson");
         aluno.setDataNascimento(LocalDate.parse("1977-04-20"));
 
-        aluno.getDisciplina().setDisciplina1("Banco de Dados");
-        aluno.getDisciplina().setNota1(90);
+        Disciplina disciplina1 = new Disciplina();
+        disciplina1.setDisciplina("Banco de Dados");
+        disciplina1.setNota(90);
+        aluno.getDisciplinas().add(disciplina1);
 
-        aluno.getDisciplina().setDisciplina2("Java e OO");
-        aluno.getDisciplina().setNota2(80.8);
+        Disciplina disciplina2 = new Disciplina();
+        disciplina2.setDisciplina("Java e OO");
+        disciplina2.setNota(80.8);
+        aluno.getDisciplinas().add(disciplina2);
 
-        aluno.getDisciplina().setDisciplina3("Algoritmos");
-        aluno.getDisciplina().setNota3(70.9);
+        Disciplina disciplina3 = new Disciplina();
+        disciplina3.setDisciplina("Algoritmos");
+        disciplina3.setNota(70.9);
+        aluno.getDisciplinas().add(disciplina3);
 
-        aluno.getDisciplina().setDisciplina4("Web");
-        aluno.getDisciplina().setNota4(90.7);
+        Disciplina disciplina4 = new Disciplina();
+        disciplina4.setDisciplina("Web");
+        disciplina4.setNota(90.7);
+        aluno.getDisciplinas().add(disciplina4);
 
         System.out.println();
         System.out.println(aluno);
