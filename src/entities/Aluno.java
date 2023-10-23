@@ -127,12 +127,7 @@ public class Aluno {
 
         double media = getMediaNota();
 
-        if (media >= 70) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return media >= 70;
     }
 
     @Override
