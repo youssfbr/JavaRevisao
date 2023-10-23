@@ -8,9 +8,17 @@ public class AlunoApplication {
         Aluno aluno = new Aluno();
         aluno.setNome("Alisson");
         aluno.setDataNascimento(LocalDate.parse("1977-04-20"));
+
+        aluno.setDisciplina1("Banco de Dados");
         aluno.setNota1(90);
+
+        aluno.setDisciplina2("Java e OO");
         aluno.setNota2(80.8);
+
+        aluno.setDisciplina3("Algoritmos");
         aluno.setNota3(70.9);
+
+        aluno.setDisciplina4("Web");
         aluno.setNota4(90.7);
 
         System.out.println();
